@@ -14,7 +14,7 @@ describe('stateAt', () => {
   })
 
   it('reconstructs state from a timestamp', () => {
-    const state = stateAt(63)
+    const state = stateAt(72)
     expect(state.people.map((cue) => cue.label)).toEqual([
       'Lucy Watson',
       'Jeannie Brown',
