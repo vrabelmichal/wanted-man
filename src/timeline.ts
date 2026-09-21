@@ -54,8 +54,6 @@ export const timeline: Cue[] = [
   { id: 'ohio-1', at: 23.6, kind: 'wanted-state', label: 'Ohio', key: 'ohio', stateFips: '39' },
   { id: 'mississippi-1', at: 27.0, kind: 'wanted-state', label: 'Mississippi', key: 'mississippi', stateFips: '28' },
   { id: 'cheyenne-1', at: 30.4, kind: 'wanted-city', label: 'Cheyenne, WY', key: 'cheyenne', coordinates: city(-104.8202, 41.14) },
-  { id: 'wide-alert-1', at: 34.8, kind: 'wide-alert', label: 'Search area expanded: wherever you look' },
-
   { id: 'colorado-possible', at: 41.6, kind: 'possible-state', label: 'Colorado', key: 'colorado', stateFips: '08', note: 'Possible whereabouts, not a confirmed wanted jurisdiction.' },
   { id: 'georgia-possible', at: 44.6, kind: 'possible-state', label: 'Georgia by the sea', key: 'georgia', stateFips: '13', note: 'Possible whereabouts. Coastal specificity: technically useful.' },
   { id: 'unknown-employer', at: 49.1, kind: 'fact', label: 'Possible employer may have no idea who Johnny is', key: 'unknown-employer' },
@@ -94,7 +92,7 @@ export const timeline: Cue[] = [
   { id: 'ohio-2', at: 155.2, kind: 'wanted-state', label: 'Ohio', key: 'ohio', stateFips: '39' },
   { id: 'mississippi-2', at: 158.4, kind: 'wanted-state', label: 'Mississippi', key: 'mississippi', stateFips: '28' },
   { id: 'cheyenne-2', at: 161.6, kind: 'wanted-city', label: 'Cheyenne, WY', key: 'cheyenne', coordinates: city(-104.8202, 41.14) },
-  { id: 'wide-alert-2', at: 166.6, kind: 'wide-alert', label: 'Search area remains: basically everywhere' },
+  { id: 'wide-alert-2', at: 169.5, kind: 'wide-alert', label: 'Search area: basically anywhere' },
 ]
 
 const uniqueByKey = (cues: Cue[]) => {
