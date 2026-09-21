@@ -150,7 +150,7 @@ const MapPanel = ({ caseFile }: { caseFile: CaseFileState }) => {
   const possibleStateIds = new Set(caseFile.possibleStates.map((cue) => cue.stateFips))
   const currentKey = caseFile.currentCue?.key
 
-  const project = (coordinates?: Coordinates) => (coordinates ? projection(coordinates) : null)
+  const project = (coordinates?: Coordinates) => (coordinates ? projection([coordinates[0], coordinates[1]]) : null)
   const shreveport = projection([-93.7502, 32.5252])
   const abilene = projection([-99.7331, 32.4487])
   const midpoint = shreveport && abilene
