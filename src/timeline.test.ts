@@ -8,8 +8,13 @@ describe('stateAt', () => {
     expect(state.people).toHaveLength(0)
   })
 
+  it('reveals California at about 14 seconds', () => {
+    expect(stateAt(13.9).wantedStates).toHaveLength(0)
+    expect(stateAt(14).wantedStates.map((cue) => cue.key)).toEqual(['california'])
+  })
+
   it('reconstructs state from a timestamp', () => {
-    const state = stateAt(63)
+    const state = stateAt(72)
     expect(state.people.map((cue) => cue.label)).toEqual([
       'Lucy Watson',
       'Jeannie Brown',
@@ -19,12 +24,12 @@ describe('stateAt', () => {
   })
 
   it('naturally rewinds when given an earlier timestamp', () => {
-    expect(stateAt(120).wantedCities.some((cue) => cue.key === 'baton-rouge')).toBe(true)
-    expect(stateAt(100).wantedCities.some((cue) => cue.key === 'baton-rouge')).toBe(false)
+    expect(stateAt(129).wantedCities.some((cue) => cue.key === 'baton-rouge')).toBe(true)
+    expect(stateAt(108).wantedCities.some((cue) => cue.key === 'baton-rouge')).toBe(false)
   })
 
   it('deduplicates repeated refrain locations', () => {
-    const final = stateAt(165)
+    const final = stateAt(170)
     expect(final.wantedStates.filter((cue) => cue.key === 'california')).toHaveLength(1)
     expect(final.wantedCities.filter((cue) => cue.key === 'buffalo')).toHaveLength(1)
   })
