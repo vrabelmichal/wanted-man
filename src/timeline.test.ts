@@ -28,6 +28,11 @@ describe('stateAt', () => {
     expect(stateAt(108).wantedCities.some((cue) => cue.key === 'baton-rouge')).toBe(false)
   })
 
+  it('shows the global search alert only at the end', () => {
+    expect(stateAt(160).wideAlert).toBe(false)
+    expect(stateAt(169.5).wideAlert).toBe(true)
+  })
+
   it('deduplicates repeated refrain locations', () => {
     const final = stateAt(170)
     expect(final.wantedStates.filter((cue) => cue.key === 'california')).toHaveLength(1)
